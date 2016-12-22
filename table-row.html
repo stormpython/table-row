@@ -1,0 +1,135 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../icon-toggle/icon-toggle.html">
+
+<!--
+`table-row`
+A link that consists of one column with a title and description,
+a favorite icon, and an option for a dropdown for extra metadata
+
+@demo demo/index.html 
+-->
+
+<dom-module id="table-row">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      a:visited, a:active, a:link {
+        color: inherit;
+      }
+
+      div.container:hover {
+        background-color: var(--table-row-hover-color, #e5e5e5);
+      }
+
+      h4 {
+        margin: 3px 0 0 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      iron-image {
+        --iron-image-width: var(--table-row-image-width, 80px);
+        --iron-image-height: var(--table-row-image-height, 60px);
+      }
+      
+      iron-icon, icon-toggle {
+        --iron-icon-height: 30px;
+        margin: 0 2.5px;
+      }
+
+      icon-toggle {
+        --icon-toggle-outline-color: #000000;
+        --icon-toggle-pressed-color: #000000;
+      }
+
+      .container {
+        border: var(--table-row-border, 1px solid #e5e5e5);
+        background-color: var(--table-row-background-color, #ffffff);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        min-height: 50px;
+        max-height: 60px;
+        margin: 0 20px;
+        padding: 5px 10px;
+      }
+      
+      .icon-container {
+        align-self: center;
+        min-width: 100px;
+      }
+
+      .title-container {
+        display: flex;
+        flex: 10 5 auto;
+        align-self: center;
+        max-height: 50px;
+        overflow: hidden;
+      }
+      
+      .image-container {
+        align-self: center;
+        width: 80px;
+      }
+    </style>
+    
+    <div class="container">
+      <div class="image-container">
+        <a href="[[url]]" target="_blank">
+          <iron-image 
+            src="[[srcImage]]"
+            sizing="contain"
+            style="width: 80px; height: 60px;">
+          </iron-image>
+        </a>
+      </div>
+      <div class="title-container">
+        <a href="[[url]]" target="_blank">
+          <h4>[[title]]</h4>
+          <p>[[description]]</p>
+        </a>
+      </div>
+      <div class="icon-container">
+        <icon-toggle icon="icons:star"></icon-toggle>
+        <iron-icon icon="icons:create"></iron-icon>
+        <iron-icon icon="icons:delete-forever"></iron-icon>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'table-row',
+
+      properties: {
+        url: {
+          type: String
+        },
+
+        srcImage: {
+          type: String
+        },
+
+        title: {
+          type: String
+        },
+
+        description: {
+          type: String
+        }
+      }
+    });
+  </script>
+</dom-module>

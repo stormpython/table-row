@@ -1,0 +1,25 @@
+{
+  "name": "icon-toggle",
+  "description": "Toggles iron icon elements",
+  "main": "icon-toggle.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/stormpython/icon-toggle",
+  "_release": "ee34b13964",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ee34b13964bf66f3e85de3f2c5ffa836b1a7cd3d"
+  },
+  "_source": "git://github.com/stormpython/icon-toggle.git",
+  "_target": "*",
+  "_originalSource": "stormpython/icon-toggle",
+  "_direct": true
+}
